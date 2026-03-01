@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para mi mejor amiga❤️‍🔥</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, sans-serif;
+overflow:hidden;
+text-align:center;
+color:white;
+}
+
+/* FONDO CON TU FOTO */
+body{
+background:url("foto.jpg.jpg") no-repeat center center fixed;
+background-size:cover;
+}
+
+/* OSCURECER FONDO */
+.overlay{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* CONTENIDO */
+.contenido{
+padding-top:80px;
+position:relative;
+z-index:2;
+}
+
+/* TITULO */
+.neon{
+font-size:55px;
+margin-bottom:45px;
+text-shadow:
+0 0 5px #fff,
+0 0 10px #ff4d6d,
+0 0 20px #ff4d6d,
+0 0 40px #ff4d6d;
+animation: parpadeo 2s infinite alternate;
+}
+
+@keyframes parpadeo{
+from{opacity:1;}
+to{opacity:.85;}
+}
+
+p{
+width:75%;
+margin:auto;
+font-size:22px;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+#santi{
+font-size:28px;
+margin-bottom:25px;
+}
+
+button{
+padding:14px 28px;
+font-size:18px;
+border:none;
+border-radius:12px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.12);
+background:#ff1e4d;
+}
+
+/* MENSAJE FINAL */
+#mensajeFinal{
+display:none;
+font-size:60px;
+margin-top:40px;
+animation: brillo 1.5s infinite alternate;
+}
+
+@keyframes brillo{
+0%{text-shadow:0 0 10px #fff;}
+100%{text-shadow:0 0 35px #ff4d6d,0 0 70px #ff4d6d;}
+}
+
+/* GATOS */
+.gato{
+position:fixed;
+top:-10px;
+font-size:30px;
+animation: caer linear forwards;
+}
+
+@keyframes caer{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(110vh);}
+}
+
+#regalo{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:10;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div id="regalo">
+<h1>🎁 Tengo un regalo para ti</h1>
+<br>
+<button onclick="abrir()">Abrir</button>
+</div>
+
+<div class="contenido">
+
+<div class="neon">
+Espero te guste Aleja 😽
+</div>
+
+<p>
+Feliz Cumpleaños vaquerita hermosa gracias por todos esos momentos tan felices que hemos pasado juntos y por esa amistad que tenemos y ojala dure para toda la vida, acuérdate que siempre me vas a tener para lo que sea y que nunca vas a estar sola TE AMO Y TE ADORO DEMASIADO!!!
+</p>
+
+<h3 id="santi">ATT:Santi</h3>
+
+<button onclick="mensaje()">Haz clic aquí</button>
+
+<div id="mensajeFinal">❤️‍🔥 TE AMO DEMASIADO ❤️‍🔥</div>
+
+<br><br>
+
+<audio id="musica" src="sabras.mp3.mp3" loop></audio>
+
+</div>
+
+<script>
+
+function abrir(){
+document.getElementById("regalo").style.display="none";
+document.getElementById("musica").play();
+}
+
+function mensaje(){
+document.getElementById("mensajeFinal").style.display="block";
+}
+
+function crearGato(){
+const gato=document.createElement("div");
+gato.classList.add("gato");
+gato.innerHTML="😻";
+
+gato.style.left=Math.random()*100+"vw";
+gato.style.animationDuration=(Math.random()*4+4)+"s";
+
+document.body.appendChild(gato);
+
+setTimeout(()=>gato.remove(),8000);
+}
+
+setInterval(crearGato,600);
+
+</script>
+
+</body>
+</html>
